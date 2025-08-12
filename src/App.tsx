@@ -10,6 +10,7 @@ const MainContainer = styled.div`
   justify-content: center;
   align-items: center;
   position: relative;
+  padding-top: 60px;
   margin-bottom: 300px;
 `;
 const ServiceContainer = styled.div`
@@ -32,9 +33,9 @@ const AdService = styled.div`
 function App() {
   return (
     <MainContainer>
-      <Navbar />
       <ServiceContainer>
         <BrowserRouter>
+          <Navbar />
           <Routes>
             <Route id="home" path="/" element={<Home />} />
             <Route id="search" path="/search" element={<Search />} />

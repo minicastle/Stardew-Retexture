@@ -11,12 +11,8 @@ const MainContainer = styled.div`
   padding: 20px;
   box-sizing: border-box;
   background-color: #ff9c9c;
-  /* background: linear-gradient(
-    180deg,
-    rgba(17, 5, 50, 1) 0%,
-    rgba(3, 81, 156, 1) 50%,
-    rgba(115, 243, 227, 1) 100%
-  ); */
+  position: absolute;
+  top: 0;
 `;
 const NavIcon = styled.div`
   display: flex;
@@ -50,21 +46,21 @@ function Navbar() {
       <NavList>
         <NavListItem
           onClick={() => {
-            navigate("/", { preventScrollReset: true });
+            navigate("/");
           }}
         >
           Home
         </NavListItem>
         <NavListItem
           onClick={() => {
-            navigate("/search", { preventScrollReset: true });
+            navigate("/search");
           }}
         >
           Search
         </NavListItem>
         <NavListItem
           onClick={() => {
-            navigate("/register", { preventScrollReset: true });
+            navigate("/register");
           }}
         >
           Register
