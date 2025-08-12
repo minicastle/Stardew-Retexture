@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 import Icon from "../../public/chicken.png";
+import { useNavigate } from "react-router-dom";
 const MainContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -36,18 +37,38 @@ const NavList = styled.ul`
 const NavListItem = styled.li`
   font-size: 18px;
   font-weight: bold;
+  user-select: none;
 `;
 
 function Navbar() {
+  const navigate = useNavigate();
   return (
     <MainContainer>
       <NavIcon>
         <img width={40} src={Icon} />
       </NavIcon>
       <NavList>
-        <NavListItem>Home</NavListItem>
-        <NavListItem>Search</NavListItem>
-        <NavListItem>Register</NavListItem>
+        <NavListItem
+          onClick={() => {
+            navigate("/", { preventScrollReset: true });
+          }}
+        >
+          Home
+        </NavListItem>
+        <NavListItem
+          onClick={() => {
+            navigate("/search", { preventScrollReset: true });
+          }}
+        >
+          Search
+        </NavListItem>
+        <NavListItem
+          onClick={() => {
+            navigate("/register", { preventScrollReset: true });
+          }}
+        >
+          Register
+        </NavListItem>
       </NavList>
     </MainContainer>
   );
