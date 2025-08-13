@@ -9,3 +9,4 @@ export type ContentsData = {
     updateDate?:Date,
     tags?:("Charactor"|"NPC"|"Animal"|"Structure"|"Mob"|"Item"|"Map")[]
 }
+export type FilterType = "character"|"structure"|"npc"|"animal"|"mob"|"item"|"map";

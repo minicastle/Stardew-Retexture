@@ -102,7 +102,7 @@ const TagBox = styled.div`
   gap: 5px;
   width: 100%;
   height: fit-content;
-  color: #a3a3a3;
+  color: #555555;
 `;
 const TagItem = styled.div`
   display: flex;
