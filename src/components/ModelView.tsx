@@ -61,6 +61,7 @@ const InfoText = styled.span`
   text-overflow: clip;
   height: 5em;
   width: 100%;
+  min-width: 1;
   overflow-y: scroll;
   padding: 0 5px 0 0;
   box-sizing: border-box;
@@ -90,7 +91,7 @@ const SubContainer = styled.div`
   justify-content: center;
   align-items: center;
   gap: 4px;
-  width: fit-content;
+  width: 100%;
 `;
 const Text = styled.span`
   white-space: nowrap;

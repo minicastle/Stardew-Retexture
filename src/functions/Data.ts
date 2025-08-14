@@ -9,7 +9,7 @@ export const data:ContentsData[]=[
         Images:[],
         viewer:0,
         loadDate:new Date('2025-08-11'),
-        tags:["Animal","Mob"]
+        tags:["animal","mob"]
     },
     {
         Title:'test2',

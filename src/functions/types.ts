@@ -7,6 +7,6 @@ export type ContentsData = {
     viewer:number,
     loadDate:Date,
     updateDate?:Date,
-    tags?:("Charactor"|"NPC"|"Animal"|"Structure"|"Mob"|"Item"|"Map")[]
+    tags?:("character"|"npc"|"animal"|"structure"|"mob"|"item"|"map")[]
 }
 export type FilterType = "character"|"structure"|"npc"|"animal"|"mob"|"item"|"map";
