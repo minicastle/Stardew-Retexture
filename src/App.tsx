@@ -27,8 +27,7 @@ const AdService = styled.div`
   min-height: 200px;
   min-width: 200px;
   border: 1px solid black;
-  margin-right: 10px;
-  margin-top: 20px;
+  margin: 10px;
 `;
 function App() {
   return (

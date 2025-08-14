@@ -11,9 +11,10 @@ const MainContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 80%;
+  width: 100%;
   height: fit-content;
   padding: 20px 0;
+  max-width: 1400px;
 `;
 const SearchContainer = styled.div`
   display: flex;

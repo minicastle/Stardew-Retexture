@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { ContentsData } from "../functions/types";
 import { BsEmojiHeartEyes } from "react-icons/bs";
 import { MdDateRange, MdUpdate } from "react-icons/md";
-import { ReactElement, useCallback } from "react";
+import { ReactElement, useCallback, useEffect, useState } from "react";
 interface Props {
   data: ContentsData;
 }
@@ -12,12 +12,13 @@ const MainContainer = styled.div`
   align-items: flex-start;
   padding: 10px;
   border: 2px solid #d5d5d5;
-  width: 80%;
+  width: 100%;
   height: 150px;
   max-height: 150px;
   min-height: 150px;
   overflow: hidden;
   box-sizing: border-box;
+  max-width: 1200px;
   :hover {
     scale: 1.01;
   }
@@ -117,6 +118,7 @@ const TagItem = styled.div`
   user-select: none;
 `;
 function ModelView({ data }: Props) {
+  const [imageView, setImageView] = useState<number>(0);
   const handleGenTags: (e: ContentsData) => ReactElement[] = useCallback(
     (e) => {
       const contents: ReactElement[] = [];
@@ -129,6 +131,23 @@ function ModelView({ data }: Props) {
     },
     []
   );
+  const imageCarousel: (e: number) => void = (e) => {
+    if (e === data.Images.length - 1) {
+      setImageView(0);
+    } else {
+      setImageView(e + 1);
+    }
+  };
+  useEffect(() => {
+    if (data.Images.length > 0) {
+      const interval = setInterval(() => {
+        imageCarousel(imageView);
+      }, 3000);
+      return () => {
+        clearInterval(interval);
+      };
+    }
+  }, [data, imageCarousel]);
   return (
     <MainContainer
       onClick={() => {
@@ -136,7 +155,7 @@ function ModelView({ data }: Props) {
       }}
     >
       <ImageContainer>
-        <Thumbnail src={data.Images[0]} />
+        <Thumbnail src={data.Images[imageView]} />
       </ImageContainer>
       <TextContainer>
         <MainText>
